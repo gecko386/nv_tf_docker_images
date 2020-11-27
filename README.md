@@ -1,5 +1,10 @@
 # Description
-These are a set of docker container build, using as base the [nvidia Tensorflow 2 container](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow ""). Nowadays this list includes:
+These are a set of docker container build to work with nvidia technologies.
+Some containers are made to develop CV ML applications, using as base the [nvidia Tensorflow 2 container](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow ""). 
+
+Nowadays this list includes:
+
+* nv_cuda: built from nvidia devel container but adding all cuda related packages and tools, including nsight eclipse
 
 * nv_tf_cv: adding computer vision and machine learning python libraries. Prepared to run in interactive mode
     * opencv
@@ -16,6 +21,7 @@ These are a set of docker container build, using as base the [nvidia Tensorflow 
 Use docker build to install image
 
 ```bash
+$ docker build -t nv_cuda_devel/
 $ docker build -t nv_tf_cv nv_tf_cv/
 $ docker build -t nv_tf_cv_jupyter nv_tf_cv_jupyter/
 ```
@@ -24,6 +30,7 @@ $ docker build -t nv_tf_cv_jupyter nv_tf_cv_jupyter/
 
 There are bash scripts to launch every container
 
+* run_cuda_devel.sh: will open container in interactive mode with X support, to execute spyder
 * run_tf_cv.sh: will open container in interactive mode with X support, to execute spyder
 * run_tf_cv_jupyter.sh: will execute jupyter and prompt link to access from browser:
 
