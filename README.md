@@ -4,7 +4,8 @@ Some containers are made to develop CV ML applications, using as base the [nvidi
 
 Nowadays this list includes:
 
-* nv_cuda: built from nvidia devel container but adding all cuda related packages and tools, including nsight eclipse
+* nv_cuda_devel: built from nvidia devel container but adding cmake and full CUDA 11.1 toolkit.
+* nv_cuda_eclipse: built from nv_cuda_devel, adding eclipse IDE with CUDA plugins.
 
 * nv_tf_cv: adding computer vision and machine learning python libraries. Prepared to run in interactive mode
     * opencv
@@ -15,6 +16,8 @@ Nowadays this list includes:
     * spyder3
 
 * nv_tf_cv_jupyter: the same that above but starting a jupyter notebook on port localhost:8888
+    * jupyter
+    * notebook
 
 ## Installation
 
@@ -22,6 +25,7 @@ Use docker build to install image
 
 ```bash
 $ docker build -t nv_cuda_devel/
+$ docker build -t nv_cuda_eclipse/
 $ docker build -t nv_tf_cv nv_tf_cv/
 $ docker build -t nv_tf_cv_jupyter nv_tf_cv_jupyter/
 ```
@@ -30,8 +34,9 @@ $ docker build -t nv_tf_cv_jupyter nv_tf_cv_jupyter/
 
 There are bash scripts to launch every container
 
-* run_cuda_devel.sh: will open container in interactive mode with X support, to execute spyder
-* run_tf_cv.sh: will open container in interactive mode with X support, to execute spyder
+* run_cuda_devel.sh: will open container in interactive.
+* run_cuda_eclipse.sh: will open eclipse IDE with CUDA plugins installed.
+* run_tf_cv.sh: will open container in interactive mode with X support, to execute spyder.
 * run_tf_cv_jupyter.sh: will execute jupyter and prompt link to access from browser:
 
     ```bash
