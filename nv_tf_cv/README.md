@@ -10,6 +10,7 @@ The libraries are:
 * scikit-image
 * matplotlib
 * imlib
+* sympy
 
 The image build also includes spyder3 working environment
 
