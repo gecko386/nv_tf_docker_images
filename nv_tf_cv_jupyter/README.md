@@ -12,7 +12,6 @@ The libraries are:
 * imlib
 * sympy
 
-The image build also includes spyder3 working environment
 
 ## Installation
 
